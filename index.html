@@ -7,9 +7,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
+        :root {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F9F9F9;
+            --text-primary: #222222;
+            --accent-orange: #F28B00;
+            --accent-blue: #1E90FF;
+            --button-whatsapp: #00B37A;
+            --button-text: #FFFFFF;
+            --footer-bg: #1B1B1B;
+            --footer-text: #AAAAAA;
+        }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-orange': '#F28B00',
+                        'custom-blue': '#1E90FF',
+                        'whatsapp-green': '#00B37A',
+                        'custom-gray': '#222222',
+                        'custom-bg': '#F9F9F9',
+                        'footer-dark': '#1B1B1B',
+                        'footer-text': '#AAAAAA'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="text-neutral-900 selection:bg-neutral-900 selection:text-white">
+<body class="text-custom-gray selection:bg-custom-gray selection:text-white">
     <!-- Header -->
     <header id="home" class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-neutral-200">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 flex items-center justify-between h-16">
@@ -21,7 +49,7 @@
                 <a href="#clientes" class="hover:text-neutral-900 text-neutral-600">Clientes</a>
                 <a href="#contato" class="hover:text-neutral-900 text-neutral-600">Contato</a>
             </nav>
-            <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá! Quero saber mais." class="inline-flex items-center rounded-xl border px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition">
+            <a href="https://wa.me/5511993253169" class="inline-flex items-center rounded-xl bg-whatsapp-green text-white px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition">
                 Fale comigo no WhatsApp
             </a>
         </div>
@@ -29,29 +57,36 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden bg-gradient-to-b from-white to-neutral-50">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-24">
-                <div class="grid md:grid-cols-2 gap-10 items-center">
+        <section class="relative overflow-hidden bg-white">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 py-16 md:py-24">
+                <div class="flex flex-col items-center text-center space-y-8">
+                    <!-- Título e subtítulo acima do vídeo -->
                     <div>
                         <p class="uppercase tracking-widest text-xs text-neutral-500">consultor e mentor</p>
-                        <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tight">
+                        <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                             Transforme suas ideias 
-                            <span class="block text-neutral-900">em empreender com diversão</span>
-                            <span class="block text-neutral-900">em um negócio lucrativo</span>
+                            <span class="block">em empreender com diversão</span>
+                            <span class="block">em um negócio lucrativo</span>
                         </h1>
-                        <p class="mt-5 text-neutral-600 max-w-xl">
+                    </div>
+                    
+                    <!-- Vídeo/Imagem centralizada -->
+                    <div class="w-full max-w-lg rounded-2xl overflow-hidden shadow-lg">
+                        <p><a href="//?wvideo=9jwn7nh62q"><img src="https://embed-ssl.wistia.com/deliveries/a310c84a0cd2700f8d9959352ce9f0d1.jpg?image_play_button_size=2x&image_crop_resized=960x540&image_play_button_rounded=1&image_play_button_color=fba026e0" width="400" height="225" style="width: 400px; height: 225px;" class="w-full h-auto"></a></p>
+                    </div>
+                    
+                    <!-- Conteúdo abaixo do vídeo -->
+                    <div class="space-y-6">
+                        <p class="text-neutral-600 max-w-xl">
                             Conheça a metodologia exclusiva para implantação de boas práticas em casas de festas, buffets infantis,
                             brinquedotecas, parques e empresas de recreação.
                         </p>
-                        <div class="mt-6 flex gap-3">
-                            <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá! Quero saber mais." class="rounded-xl bg-black text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800 transition">
+                        <div class="flex gap-3 justify-center flex-wrap">
+                            <a href="https://wa.me/5511993253169" class="rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
                                 Fale comigo no WhatsApp
                             </a>
                             <a href="#servicos" class="rounded-xl border px-5 py-3 text-sm font-medium hover:shadow transition">Ver serviços</a>
                         </div>
-                    </div>
-                    <div class="aspect-[4/3] md:aspect-[5/4] rounded-2xl bg-neutral-100 shadow-inner">
-                        <div class="w-full h-full grid place-items-center text-neutral-400">Imagem / Vídeo</div>
                     </div>
                 </div>
             </div>
@@ -60,6 +95,11 @@
         <!-- About Section -->
         <section id="sobre" class="scroll-mt-24 py-20 bg-white">
             <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <!-- Imagem no topo -->
+                <div class="flex justify-center mb-10">
+                    <img src="https://framerusercontent.com/images/ZzHgfRoED3OQESv80oKReteoe0.png" alt="Hubert Krause" class="w-[150px] h-auto rounded-lg shadow-sm">
+                </div>
+                
                 <div class="grid md:grid-cols-5 gap-10 items-start">
                     <div class="md:col-span-2">
                         <h2 class="text-sm font-semibold tracking-widest text-neutral-500">SOBRE MIM</h2>
@@ -67,54 +107,78 @@
                         <p class="mt-2 text-neutral-500">consultor e mentor</p>
                     </div>
                     <div class="md:col-span-3 space-y-4 text-neutral-700">
-                        <p>Reconhecido como um dos principais especialistas do setor do entretenimento infantil e familiar.</p>
-                        <p>Jornada de 25 anos com resultados consistentes e conhecimento profundo do setor.</p>
-                        <p>Expertise em planejamento estratégico, gestão operacional, marketing e crescimento de negócios.</p>
+                        <p>Reconhecido como uns dos principais especialistas do setor do entretenimento infantil e familiar.</p>
+                        
+                        <p><strong>Jornada de 25 anos:</strong> Trajetória profissional marcada por uma série de sucessos incontestáveis e conhecimento profundo da área.</p>
+                        
+                        <p><strong>Autoridade na área:</strong> Os sucessos ao longo de sua carreira o consolidam como uma autoridade indiscutível no campo em que atua.</p>
+                        
+                        <p><strong>Expertise abrangente:</strong> Sua expertise abrange diversas competências, tais como planejamento estratégico, gestão operacional, marketing avançado e estratégias de negócios inovadoras.</p>
+                        
+                        <p><strong>Parceiro inestimável:</strong> A combinação de experiência prática e conhecimento aprofundado faz de Hubert Krause um parceiro inestimável para aqueles que desejam iniciar um empreendimento no ramo ou necessitam de ajuda para superar desafios em suas operações.</p>
+                        
+                        <p><strong>Compromisso com a excelência:</strong> Além de seu sucesso profissional, Krause demonstra um compromisso com a excelência, que se estende à educação. Ele oferece cursos e materiais didáticos que funcionam como verdadeiros catalisadores para o aprimoramento da gestão e operações de negócios no setor.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="servicos" class="scroll-mt-24 py-20 bg-neutral-50">
+        <section id="servicos" class="scroll-mt-24 py-20 bg-custom-bg">
             <div class="mx-auto max-w-6xl px-4 sm:px-6">
-                <div class="flex items-end justify-between gap-6">
-                    <div>
-                        <h2 class="text-sm font-semibold tracking-widest text-neutral-500">SERVIÇOS</h2>
-                        <h3 class="mt-2 text-3xl font-bold">Como eu posso ajudar o seu negócio</h3>
-                    </div>
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-semibold tracking-widest text-neutral-500 uppercase">SERVIÇOS</h2>
+                    <h3 class="mt-2 text-3xl font-bold">Como eu posso ajudar o seu negócio</h3>
                 </div>
-                <div class="mt-10 grid md:grid-cols-3 gap-6">
-                    <article class="rounded-2xl overflow-hidden border bg-white shadow-sm hover:shadow transition">
-                        <div class="aspect-[4/3] bg-neutral-100">
-                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Consultoria" class="w-full h-full object-cover"/>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Consultoria -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <!-- Ícone -->
+                        <div class="w-12 h-12 bg-custom-orange rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                                <path d="M12 18L10.91 14.26L4 13.5L10.91 12.74L12 9L13.09 12.74L20 13.5L13.09 14.26L12 18Z"/>
+                            </svg>
                         </div>
-                        <div class="p-5">
-                            <h4 class="text-xl font-semibold">Consultoria</h4>
-                            <p class="text-sm text-neutral-500 mt-1">Para quem deseja empreender no ramo</p>
-                            <p class="text-neutral-700 mt-3">Metodologia exclusiva que já ajudou milhares de empreendedores.</p>
+                        
+                        <h3 class="text-sm font-medium text-custom-orange mb-2">Consultoria</h3>
+                        <h4 class="text-2xl font-bold text-neutral-900 mb-4 leading-tight">Para quem deseja empreender neste ramo</h4>
+                        <p class="text-neutral-600">Por meio de uma metodologia exclusiva que ajudou mais de 5000 empreendedores nacionais e internacionais.</p>
+                    </div>
+
+                    <!-- Mentoria -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <!-- Ícone -->
+                        <div class="w-12 h-12 bg-custom-orange rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 4C18.2091 4 20 5.79086 20 8C20 10.2091 18.2091 12 16 12C13.7909 12 12 10.2091 12 8C12 5.79086 13.7909 4 16 4Z"/>
+                                <path d="M8 4C10.2091 4 12 5.79086 12 8C12 10.2091 10.2091 12 8 12C5.79086 12 4 10.2091 4 8C4 5.79086 5.79086 4 8 4Z"/>
+                                <path d="M8 14C5.79086 14 4 15.7909 4 18V20H12V18C12 15.7909 10.2091 14 8 14Z"/>
+                                <path d="M16 14C13.7909 14 12 15.7909 12 18V20H20V18C20 15.7909 18.2091 14 16 14Z"/>
+                            </svg>
                         </div>
-                    </article>
-                    <article class="rounded-2xl overflow-hidden border bg-white shadow-sm hover:shadow transition">
-                        <div class="aspect-[4/3] bg-neutral-100">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Mentoria" class="w-full h-full object-cover"/>
+                        
+                        <h3 class="text-sm font-medium text-custom-orange mb-2">Mentoria</h3>
+                        <h4 class="text-2xl font-bold text-neutral-900 mb-4 leading-tight">Para quem já atua no ramo mas encontra grandes desafios</h4>
+                        <p class="text-neutral-600">Soluções de boas práticas para negócios em operação enfrentando desafios</p>
+                    </div>
+
+                    <!-- Curso -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <!-- Ícone -->
+                        <div class="w-12 h-12 bg-custom-orange rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z"/>
+                                <path d="M17 8H7V10H17V8Z"/>
+                                <path d="M17 12H7V14H17V12Z"/>
+                                <path d="M14 16H7V18H14V16Z"/>
+                            </svg>
                         </div>
-                        <div class="p-5">
-                            <h4 class="text-xl font-semibold">Mentoria</h4>
-                            <p class="text-sm text-neutral-500 mt-1">Para quem já atua e enfrenta desafios</p>
-                            <p class="text-neutral-700 mt-3">Soluções de boas práticas para negócios em operação.</p>
-                        </div>
-                    </article>
-                    <article class="rounded-2xl overflow-hidden border bg-white shadow-sm hover:shadow transition">
-                        <div class="aspect-[4/3] bg-neutral-100">
-                            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop" alt="Cursos" class="w-full h-full object-cover"/>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="text-xl font-semibold">Cursos</h4>
-                            <p class="text-sm text-neutral-500 mt-1">Capacitações específicas</p>
-                            <p class="text-neutral-700 mt-3">Informações sobre cursos, treinamentos e materiais didáticos.</p>
-                        </div>
-                    </article>
+                        
+                        <h3 class="text-sm font-medium text-custom-orange mb-2">Curso</h3>
+                        <h4 class="text-2xl font-bold text-neutral-900 mb-4 leading-tight">Conhecimento técnico e certificação para capacitações específicas.</h4>
+                        <p class="text-neutral-600">Informações sobre cursos, treinamentos e materiais didáticos.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -128,35 +192,19 @@
                         <h3 class="mt-2 text-3xl font-bold">Conheça nossos clientes</h3>
                     </div>
                 </div>
-                <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+1" alt="Cliente 1" class="max-h-16 object-contain"/>
-                    </div>
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+2" alt="Cliente 2" class="max-h-16 object-contain"/>
-                    </div>
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+3" alt="Cliente 3" class="max-h-16 object-contain"/>
-                    </div>
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+4" alt="Cliente 4" class="max-h-16 object-contain"/>
-                    </div>
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+5" alt="Cliente 5" class="max-h-16 object-contain"/>
-                    </div>
-                    <div class="h-24 bg-neutral-50 border rounded-xl grid place-items-center">
-                        <img src="https://dummyimage.com/200x120/efefef/666.png&text=Cliente+6" alt="Cliente 6" class="max-h-16 object-contain"/>
-                    </div>
+                <div class="mt-10 flex justify-center">
+                    <img src="https://framerusercontent.com/images/ZFZYbtAhVXB3h5zqWrBaQP3nM.png" alt="Logos dos Clientes" class="max-w-full h-auto"/>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials Section -->
-        <section id="depoimentos" class="scroll-mt-24 py-20 bg-neutral-50">
+        <section id="depoimentos" class="scroll-mt-24 py-20 bg-custom-bg">
             <div class="mx-auto max-w-6xl px-4 sm:px-6">
-                <div class="mb-10">
+                <div class="mb-10 text-center">
                     <h2 class="text-sm font-semibold tracking-widest text-neutral-500">DEPOIMENTOS</h2>
-                    <h3 class="mt-2 text-3xl font-bold">Depoimentos — Novos Empreendimentos</h3>
+                    <h3 class="mt-2 text-3xl font-bold">Consultoria para novos empreendimentos</h3>
+                    <p class="mt-4 text-neutral-600 max-w-3xl mx-auto">Depoimentos de quem empreendeu um novo empreendimento com apoio da consultoria com Hubert Krause</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="rounded-2xl border bg-white p-6 shadow-sm">
@@ -218,12 +266,12 @@
                     <div>
                         <h2 class="text-sm font-semibold tracking-widest text-neutral-500 uppercase">FALE CONOSCO</h2>
                         <h3 class="mt-2 text-3xl md:text-4xl font-bold leading-tight">Vamos transformar o seu negócio juntos.</h3>
-                        <a href="https://api.whatsapp.com/send?phone=5500000000000&text=Olá! Quero agendar uma conversa." class="mt-6 inline-flex rounded-xl bg-black text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800 transition">
+                        <a href="https://wa.me/5511993253169" class="mt-6 inline-flex rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
                             Fale comigo no WhatsApp
                         </a>
                     </div>
-                    <div class="aspect-[4/3] rounded-2xl bg-neutral-100 grid place-items-center">
-                        <span class="text-neutral-400">Imagem / Ilustração</span>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://framerusercontent.com/images/ZzHgfRoED3OQESv80oKReteoe0.png" alt="Hubert Krause" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -231,14 +279,14 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-neutral-950 text-neutral-300">
+    <footer class="bg-footer-dark text-footer-text">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid md:grid-cols-4 gap-10">
             <div class="md:col-span-2">
                 <p class="text-white text-lg font-semibold">Hubert Krause</p>
                 <p class="mt-2 text-sm max-w-sm">Consultoria especializada em negócios de entretenimento infantil e familiar.</p>
             </div>
             <nav class="space-y-2">
-                <p class="text-neutral-400 text-sm">Navegue por aqui</p>
+                <p class="text-gray-400 text-sm">Navegue por aqui</p>
                 <div><a href="#home" class="hover:text-white text-sm">Home</a></div>
                 <div><a href="#sobre" class="hover:text-white text-sm">Sobre mim</a></div>
                 <div><a href="#servicos" class="hover:text-white text-sm">Serviços</a></div>
@@ -246,18 +294,18 @@
                 <div><a href="#contato" class="hover:text-white text-sm">Contato</a></div>
             </nav>
             <div class="space-y-2">
-                <p class="text-neutral-400 text-sm">Onde estamos</p>
+                <p class="text-gray-400 text-sm">Onde estamos</p>
                 <p class="text-sm">Rua Pedro, 40 - Vila Albertina</p>
                 <p class="text-sm">São Paulo, SP - Brasil</p>
                 <div class="mt-2 flex gap-3">
-                    <a href="https://api.whatsapp.com/send?phone=5500000000000" class="underline text-sm">WhatsApp</a>
+                    <a href="https://wa.me/5511993253169" class="underline text-sm">WhatsApp</a>
                     <a href="https://www.instagram.com/" class="underline text-sm">Instagram</a>
                 </div>
             </div>
         </div>
-        <div class="border-t border-neutral-800">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6 py-6 text-xs text-neutral-500">
-                2025 © Todos os direitos reservados — Hubert Krause — CNPJ 00.000.000/0001-00
+        <div class="border-t border-gray-800">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 py-6 text-xs text-footer-text">
+                2024© Todos os direitos reservados a Hubert Krause Consultoria - CNPJ 20.617.675/0001-91
             </div>
         </div>
     </footer>
