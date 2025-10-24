@@ -13,11 +13,11 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-16473674461');
-    </script>
-    
-    <!-- Event snippet for Contato pelo whatsapp conversion page -->
-    <script>
-      gtag('event', 'conversion', {'send_to': 'AW-16473674461/UTxXCKiotZsZEN2loa89'});
+      
+      // Função para disparar conversão apenas quando clicar no WhatsApp
+      function trackWhatsAppConversion() {
+        gtag('event', 'conversion', {'send_to': 'AW-16473674461/UTxXCKiotZsZEN2loa89'});
+      }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -87,7 +87,7 @@
                 <a href="#clientes" class="hover:text-neutral-900 text-neutral-600">Clientes</a>
                 <a href="#contato" class="hover:text-neutral-900 text-neutral-600">Contato</a>
             </nav>
-            <a href="https://wa.me/5511993253169" class="inline-flex items-center rounded-xl bg-whatsapp-green text-white px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition">
+            <a href="https://wa.me/5511993253169" onclick="trackWhatsAppConversion()" class="inline-flex items-center rounded-xl bg-whatsapp-green text-white px-4 py-2 text-sm font-medium shadow-sm hover:shadow transition">
                 Fale comigo no WhatsApp
             </a>
         </div>
@@ -129,7 +129,7 @@
                             brinquedotecas, parques e empresas de recreação.
                         </p>
                         <div class="flex justify-center">
-                            <a href="https://wa.me/5511993253169" class="rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
+                            <a href="https://wa.me/5511993253169" onclick="trackWhatsAppConversion()" class="rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
                                 Fale comigo no WhatsApp
                             </a>
                         </div>
@@ -391,7 +391,7 @@
                     <div>
                         <h2 class="text-sm font-semibold tracking-widest text-neutral-500 uppercase">FALE CONOSCO</h2>
                         <h3 class="mt-2 text-3xl md:text-4xl font-bold leading-tight">Vamos transformar o seu negócio juntos.</h3>
-                        <a href="https://wa.me/5511993253169" class="mt-6 inline-flex rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
+                        <a href="https://wa.me/5511993253169" onclick="trackWhatsAppConversion()" class="mt-6 inline-flex rounded-xl bg-whatsapp-green text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition">
                             Fale comigo no WhatsApp
                         </a>
                     </div>
@@ -423,7 +423,7 @@
                 <p class="text-sm">Rua Pedro, 40 - Vila Albertina</p>
                 <p class="text-sm">São Paulo, SP - Brasil</p>
                 <div class="mt-2 flex gap-3">
-                    <a href="https://wa.me/5511993253169" class="underline text-sm">WhatsApp</a>
+                    <a href="https://wa.me/5511993253169" onclick="trackWhatsAppConversion()" class="underline text-sm">WhatsApp</a>
                     <a href="https://www.instagram.com/" class="underline text-sm">Instagram</a>
                 </div>
             </div>
